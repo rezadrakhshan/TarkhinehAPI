@@ -7,13 +7,13 @@ from db.models import Food
 router = APIRouter(tags=["Food"])
 
 
-@router.get("/")
+@router.get("/food/")
 def main(db: Session = Depends(get_db)):
     foods = db.query(Food).all()
     return foods
 
 
-@router.post("/food/create", response_model=FoodCreate)
+@router.post("/food/create/", response_model=FoodCreate)
 def create_food(food: FoodCreate, db: Session = Depends(get_db)):
     try:
         calculate_finall_price = food.price - ((food.price * food.discount) / 100)
@@ -33,7 +33,7 @@ def create_food(food: FoodCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.delete("/food/remove")
+@router.delete("/food/remove/")
 def remove_food(food: FoodRemove, db: Session = Depends(get_db)):
     try:
         selected_food = db.query(Food).filter(Food.id == food.id).first()
