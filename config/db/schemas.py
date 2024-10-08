@@ -74,5 +74,27 @@ class UpdateAddress(BaseModel):
     address: Optional[str] = ""
     profile_id: Optional[int] = 0
 
+
 class RemoveAddress(BaseModel):
+    id: int
+
+
+class CreateBranch(BaseModel):
+    title: str
+    address: str
+    phone_number: str
+    working_hours: str
+    image: str
+
+
+class UpdateBranch(BaseModel):
+    id:int
+    title: Optional[str] = ""
+    address: Optional[str] = ""
+    phone_number: Optional[str] = ""
+    working_hours: Optional[str] = ""
+    image: Optional[str] = ""
+
+
+class RemoveBranch(BaseModel):
     id:int

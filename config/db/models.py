@@ -39,3 +39,14 @@ class Address(Base):
     address = Column(String)
     profile_id = Column(Integer, ForeignKey("profiles.id"))
     profile = relationship("Profile", back_populates="address")
+
+
+class Branch(Base):
+    __tablename__ = "branchs"
+    id = Column(Integer, primary_key=True, index=True)
+
+    title = Column(String)
+    address = Column(String)
+    phone_number = Column(String)
+    working_hours = Column(String)
+    image = Column(String)
