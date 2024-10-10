@@ -1,12 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tarkhineh Api</title>
-</head>
-<style>
-</style>
-<body>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Lato", sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      header h1 {
+        font-size: 24px;
+        color: black;
+      }
+
+      header div a {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        margin-left: 20px;
+        padding: 10px 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+
+      header div a:hover {
+        background-color: orangered;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        padding-top: 80px; /* Space for the fixed header */
+      }
+
+      .sidebar {
+        width: 20%;
+        height: calc(100vh - 80px);
+        padding: 20px;
+        background-color: #f9f9f9;
+        overflow-y: auto;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+      }
+
+      .sidebar h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 10px 0;
+        font-size: 16px;
+      }
+
+      .sidebar a:hover {
+        color: orangered;
+      }
+
+      .main-content {
+        width: 80%;
+        margin-left: 20%;
+        padding: 60px;
+        overflow-y: auto;
+      }
+
+      .main-content pre {
+        background-color: #2d2d2d;
+        font-family: "Fira Code";
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .main-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .main-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .main-content section {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tarkhineh Api</h1>
+      <div>
+        <a href="#">Docs</a>
+        <a href="#">Source</a>
+        <a href="#">Support Us</a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Documentation</h2>
+        <h3>Food</h3>
+        <a href="#Food-Create">Create Food</a>
+        <a href="#Food-Remove">Remove Food</a>
+        <a href="#Food-Get">Get Food</a>
+        <h3>Profile</h3>
+        <a href="#Profile-Create">Create Profile</a>
+        <a href="#Profile-Remove">Remove Profile</a>
+        <a href="#Profile-Update">Update Profile</a>
+        <a href="#Profile-Get">Get Profile</a>
+        <h3>Address</h3>
+        <a href="#Address-Create">Create Address</a>
+        <a href="#Address-Remove">Remove Address</a>
+        <a href="#Address-Update">Update Address</a>
+        <a href="#Address-Get">Get Address</a>
+        <h3>Branch</h3>
+        <a href="#Branch-Create">Create Branch</a>
+        <a href="#Branch-Remove">Remove Branch</a>
+        <a href="#Branch-Update">Update Branch</a>
+        <a href="#Branch-Get">Get Branch</a>
+      </div>
+      <div class="main-content">
+        <h2>Documentation</h2>
+        <p>
+          This documentation will help you get familiar with the resources of
+          the Tarkhineh API and show you how to make different queries, so that
+          you can get the most out of it.
+        </p>
+        <section id="Food-Create">
+          <h3>Create Food</h3>
+          <pre><span style="color: #49cc90;">POST</span> https://tarkhineh.liara.run/food/create/</pre>
+          <pre>
+{
+    "title": "string",
+    "description": "string",
+    "price": 0,
+    "discount": 0,
+    "image": "string"
+}
+            </pre>
+        </section>
+        <section id="Food-Remove">
+          <h3>Remove Food</h3>
+          <pre><span style="color: #f93e3e;">DELETE</span> https://tarkhineh.liara.run/food/remove/</pre>
+          <pre>
+{
+    "id": 0
+}
+              </pre>
+        </section>
+        <section id="Food-Get">
+          <h3>Get Food</h3>
+          <pre><span style="color: #61affe;">GET</span> https://tarkhineh.liara.run/food/</pre>
+        </section>
+        <section id="Profile-Create">
+          <h3>Create Profile</h3>
+          <pre><span style="color: #49cc90;">POST</span> https://tarkhineh.liara.run/authentication/profile/create/</pre>
+          <pre>
+{
+    "firstname": "",
+    "lastname": "",
+    "email": "",
+    "phone": "string",
+    "birth_date": "",
+    "username": ""
+}
+          </pre>
+        </section>
+        <section id="Profile-Remove">
+          <h3>Remove Profile</h3>
+          <pre><span style="color: #f93e3e;">DELETE</span> https://tarkhineh.liara.run/authentication/profile/delete/</pre>
+          <pre>
+{
+    "id": 0
+}
+          </pre>
+        </section>
+        <section id="Profile-Update">
+          <h3>Update Profile</h3>
+          <pre><span style="color: #fca130;">PUT</span> https://tarkhineh.liara.run/authentication/profile/update/</pre>
+          <pre>
+{
+    "id": 0,
+    "firstname": "",
+    "lastname": "",
+    "email": "",
+    "phone": "",
+    "birth_date": "",
+    "username": ""
+}
+          </pre>
+        </section>
+        <section id="Profile-Get">
+          <h3>Get Profile</h3>
+          <pre><span style="color: #61affe;">GET</span> https://tarkhineh.liara.run/authentication/profile/</pre>
+        </section>
+        <section id="Address-Create">
+          <h3>Create Address</h3>
+          <pre><span style="color: #49cc90;">POST</span> https://tarkhineh.liara.run/authentication/address/create/</pre>
+          <pre>
+{
+    "title": "string",
+    "is_your_receiver_delivery": false,
+    "phone": "string",
+    "address": "string",
+    "profile_id": 0
+}
+          </pre>
+        </section>
+        <section id="Address-Remove">
+          <h3>Remove Address</h3>
+          <pre><span style="color: #f93e3e;">DELETE</span> https://tarkhineh.liara.run/authentication/address/delete/</pre>
+          <pre>
+{
+    "id": 0
+}
+          </pre>
+        </section>
+        <section id="Address-Update">
+          <h3>Update Address</h3>
+          <pre><span style="color: #fca130;">PUT</span> https://tarkhineh.liara.run/authentication/address/update/</pre>
+          <pre>
+{
+    "id": 0,
+    "title": "",
+    "is_your_receiver_delivery": false,
+    "phone": "",
+    "address": "",
+    "profile_id": 0
+}
+          </pre>
+        </section>
+        <section id="Address-Get">
+          <h3>Get Address</h3>
+          <pre><span style="color: #61affe;">GET</span> https://tarkhineh.liara.run/authentication/address/</pre>
+        </section>
+        <section id="Branch-Create">
+          <h3>Create Branch</h3>
+          <pre><span style="color: #49cc90;">POST</span> https://tarkhineh.liara.run/branch/create/</pre>
+          <pre>
+{
+    "title": "string",
+    "address": "string",
+    "phone_number": "string",
+    "working_hours": "string",
+    "image": "string"
+}
+          </pre>
+        </section>
+        <section id="Branch-Remove">
+          <h3>Remove Branch</h3>
+          <pre><span style="color: #f93e3e;">DELETE</span> https://tarkhineh.liara.run/branch/remove/</pre>
+          <pre>
+{
+    "id": 0
+}
+          </pre>
+        </section>
+        <section id="Branch-Update">
+          <h3>Update Branch</h3>
+          <pre><span style="color: #fca130;">PUT</span> https://tarkhineh.liara.run/branch/update/</pre>
+          <pre>
+{
+    "id": 0,
+    "title": "",
+    "address": "",
+    "phone_number": "",
+    "working_hours": "",
+    "image": ""
+}
+          </pre>
+        </section>
+        <section id="Branch-Get">
+          <h3>Get Branch</h3>
+          <pre><span style="color: #61affe;">GET</span> https://tarkhineh.liara.run/branch/</pre>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

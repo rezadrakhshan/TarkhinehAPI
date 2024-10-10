@@ -5,7 +5,7 @@ from router import food, authentication, branch
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 
-app = FastAPI(title="Tarkhineh", docs_url=None)
+app = FastAPI(title="Tarkhineh",docs_url=None)
 
 templates = Jinja2Templates(directory="templates")
 
