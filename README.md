@@ -47,7 +47,7 @@ https://tarkhineh.liara.run/
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://github.com/rezadrakhshan/TarkhinehAPI/tree/main?tab=MIT-1-ov-file).
 
 ## Contact
 
